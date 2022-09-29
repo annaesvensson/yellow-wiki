@@ -1,5 +1,5 @@
 <?php
-// Wiki extension, https://github.com/datenstrom/yellow-extensions/tree/master/source/wiki
+// Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
     const VERSION = "0.8.20";

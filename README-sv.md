@@ -8,7 +8,7 @@ Wiki för din webbplats.
 
 ## Hur man använder en wiki
 
-Wikin finns på din webbplats som `http://website/wiki/`. För att visa wikin på startsidan, gå till din `content` mapp och ta bort `1-home` mappen. För att skapa en ny wikisida, lägg till en ny fil i wiki-mappen. Ställ in `Title` och andra [sidinställningar](https://github.com/datenstrom/yellow-extensions/tree/master/source/core/README-sv.md#inställningar-page) högst upp på en sida. Använd `Tag` för att gruppera liknande sidor.
+Wikin finns på din webbplats som `http://website/wiki/`. För att visa wikin på startsidan, gå till din `content` mapp och ta bort `1-home` mappen. För att skapa en ny wikisida, lägg till en ny fil i wiki-mappen. Ställ in `Title` och andra [sidinställningar](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md#inställningar-page) högst upp på en sida. Använd `Tag` för att gruppera liknande sidor.
 
 ## Hur man visar wikiinformation
 
@@ -134,7 +134,7 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 
 ## Installation
 
-[Ladda ner tillägg](https://github.com/datenstrom/yellow-extensions/raw/master/downloads/wiki.zip) och kopiera zip-fil till din `system/extensions` mapp. Högerklicka om du använder Safari.
+[Ladda ner tillägg](https://github.com/annaesvensson/yellow-wiki/archive/main.zip) och kopiera zip-fil till din `system/extensions` mapp. Högerklicka om du använder Safari.
 
 ## Utvecklare
 
