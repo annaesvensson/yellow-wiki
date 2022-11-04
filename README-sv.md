@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Wiki 0.8.20
+# Wiki 0.8.21
 
 Wiki för din webbplats.
 

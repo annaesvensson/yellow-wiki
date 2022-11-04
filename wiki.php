@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.20";
+    const VERSION = "0.8.21";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -42,13 +42,13 @@ class YellowWiki {
     public function getShorcutWikiauthors($page, $name, $text) {
         $output = null;
         list($startLocation, $entriesMax) = $this->yellow->toolbox->getTextArguments($text);
-        if (empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (strempty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
+        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
         $wikiStart = $this->yellow->content->find($startLocation);
         $pages = $this->getWikiPages($startLocation);
         $page->setLastModified($pages->getModified());
         $authors = $this->getMeta($pages, "author");
-        if (count($authors)) {
+        if (!is_array_empty($authors)) {
             $authors = $this->yellow->lookup->normaliseUpperLower($authors);
             if ($entriesMax!=0 && count($authors)>$entriesMax) {
                 uasort($authors, "strnatcasecmp");
@@ -73,13 +73,13 @@ class YellowWiki {
     public function getShorcutWikipages($page, $name, $text) {
         $output = null;
         list($startLocation, $entriesMax, $filterTag) = $this->yellow->toolbox->getTextArguments($text);
-        if (empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (strempty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
+        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
         $pages = $this->getWikiPages($startLocation, false);
-        if (!empty($filterTag)) $pages->filter("tag", $filterTag);
+        if (!is_string_empty($filterTag)) $pages->filter("tag", $filterTag);
         $pages->sort("title");
         $page->setLastModified($pages->getModified());
-        if (count($pages)) {
+        if (!is_array_empty($pages)) {
             if ($entriesMax!=0) $pages->limit($entriesMax);
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
@@ -99,13 +99,13 @@ class YellowWiki {
     public function getShorcutWikichanges($page, $name, $text) {
         $output = null;
         list($startLocation, $entriesMax, $filterTag) = $this->yellow->toolbox->getTextArguments($text);
-        if (empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (strempty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
+        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
         $pages = $this->getWikiPages($startLocation);
-        if (!empty($filterTag)) $pages->filter("tag", $filterTag);
+        if (!is_string_empty($filterTag)) $pages->filter("tag", $filterTag);
         $pages->sort("modified", false);
         $page->setLastModified($pages->getModified());
-        if (count($pages)) {
+        if (!is_array_empty($pages)) {
             if ($entriesMax!=0) $pages->limit($entriesMax);
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
@@ -125,12 +125,12 @@ class YellowWiki {
     public function getShorcutWikirelated($page, $name, $text) {
         $output = null;
         list($startLocation, $entriesMax) = $this->yellow->toolbox->getTextArguments($text);
-        if (empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (strempty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
+        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
         $pages = $this->getWikiPages($startLocation);
         $pages->similar($page->getPage("main"));
         $page->setLastModified($pages->getModified());
-        if (count($pages)) {
+        if (!is_array_empty($pages)) {
             if ($entriesMax!=0) $pages->limit($entriesMax);
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
@@ -150,13 +150,13 @@ class YellowWiki {
     public function getShorcutWikitags($page, $name, $text) {
         $output = null;
         list($startLocation, $entriesMax) = $this->yellow->toolbox->getTextArguments($text);
-        if (empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (strempty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
+        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
         $wikiStart = $this->yellow->content->find($startLocation);
         $pages = $this->getWikiPages($startLocation);
         $page->setLastModified($pages->getModified());
         $tags = $this->getMeta($pages, "tag");
-        if (count($tags)) {
+        if (!is_array_empty($tags)) {
             $tags = $this->yellow->lookup->normaliseUpperLower($tags);
             if ($entriesMax!=0 && count($tags)>$entriesMax) {
                 uasort($tags, "strnatcasecmp");
@@ -203,7 +203,7 @@ class YellowWiki {
                 array_push($pagesFilter, $this->yellow->language->normaliseDate($pages->getFilter()));
             }
             $pages->sort($chronologicalOrder ? "modified" : "title", !$chronologicalOrder);
-            if (!empty($pagesFilter)) {
+            if (!is_array_empty($pagesFilter)) {
                 $text = implode(" ", $pagesFilter);
                 $this->yellow->page->set("titleHeader", $text." - ".$this->yellow->page->get("sitename"));
                 $this->yellow->page->set("titleContent", $this->yellow->page->get("title").": ".$text);
