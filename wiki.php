@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.21";
+    const VERSION = "0.8.22";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -227,7 +227,7 @@ class YellowWiki {
     
     // Handle content file editing
     public function onEditContentFile($page, $action, $email) {
-        if ($page->get("layout")=="wiki") $page->set("pageNewLocation", $this->yellow->system->get("wikiNewLocation"));
+        if ($page->get("layout")=="wiki") $page->set("editNewLocation", $this->yellow->system->get("wikiNewLocation"));
     }
     
     // Return wiki pages
