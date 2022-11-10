@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.22";
+    const VERSION = "0.8.23";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -49,7 +49,7 @@ class YellowWiki {
         $page->setLastModified($pages->getModified());
         $authors = $this->getMeta($pages, "author");
         if (!is_array_empty($authors)) {
-            $authors = $this->yellow->lookup->normaliseUpperLower($authors);
+            $authors = $this->yellow->lookup->normaliseArray($authors);
             if ($entriesMax!=0 && count($authors)>$entriesMax) {
                 uasort($authors, "strnatcasecmp");
                 $authors = array_slice($authors, -$entriesMax, $entriesMax, true);
@@ -58,7 +58,7 @@ class YellowWiki {
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
             foreach ($authors as $key=>$value) {
-                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->toolbox->normaliseArguments("author:$key")."\">";
+                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$key")."\">";
                 $output .= htmlspecialchars($key)."</a></li>\n";
             }
             $output .= "</ul>\n";
@@ -157,7 +157,7 @@ class YellowWiki {
         $page->setLastModified($pages->getModified());
         $tags = $this->getMeta($pages, "tag");
         if (!is_array_empty($tags)) {
-            $tags = $this->yellow->lookup->normaliseUpperLower($tags);
+            $tags = $this->yellow->lookup->normaliseArray($tags);
             if ($entriesMax!=0 && count($tags)>$entriesMax) {
                 uasort($tags, "strnatcasecmp");
                 $tags = array_slice($tags, -$entriesMax, $entriesMax, true);
@@ -166,7 +166,7 @@ class YellowWiki {
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
             foreach ($tags as $key=>$value) {
-                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->toolbox->normaliseArguments("tag:$key")."\">";
+                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->lookup->normaliseArguments("tag:$key")."\">";
                 $output .= htmlspecialchars($key)."</a></li>\n";
             }
             $output .= "</ul>\n";
@@ -251,7 +251,7 @@ class YellowWiki {
         $class = "";
         if ($page->isExisting("tag")) {
             foreach (preg_split("/\s*,\s*/", $page->get("tag")) as $tag) {
-                $class .= " tag-".$this->yellow->toolbox->normaliseArguments($tag, false);
+                $class .= " tag-".$this->yellow->lookup->normaliseArguments($tag, false);
             }
         }
         return trim($class);
