@@ -6,6 +6,10 @@ Wiki for your website.
 
 <p align="center"><img src="wiki-screenshot.png?raw=true" alt="Screenshot"></p>
 
+## How to install an extension
+
+[Download ZIP file](https://github.com/annaesvensson/yellow-wiki/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+
 ## How to use a wiki
 
 The wiki is available on your website as `http://website/wiki/`. To show the wiki on the home page, go to your `content` folder and delete the `1-home` folder. To create a new wiki page, add a new file to the wiki folder. Set `Title` and other [page settings](https://github.com/annaesvensson/yellow-core#settings-page) at the top of a page. Use `Tag` to group similar pages together.
@@ -131,10 +135,6 @@ The following settings can be configured in file `system/extensions/yellow-syste
 `content/shared/page-new-wiki.md` = content file for new wiki page  
 `system/layouts/wiki.html` = layout file for individual wiki page  
 `system/layouts/wiki-start.html` = layout file for wiki start page  
-
-## Installation
-
-[Download extension](https://github.com/annaesvensson/yellow-wiki/archive/main.zip) and copy ZIP file into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 ## Developer
 

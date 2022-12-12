@@ -6,6 +6,10 @@ Wiki für deine Webseite.
 
 <p align="center"><img src="wiki-screenshot.png?raw=true" alt="Bildschirmfoto"></p>
 
+## Wie man eine Erweiterung installiert
+
+[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-wiki/archive/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+
 ## Wie man ein Wiki benutzt
 
 Das Wiki ist auf deiner Webseite vorhanden als `http://website/wiki/`. Um das Wiki auf der Startseite anzuzeigen, gehe in dein `content`-Verzeichnis und lösche das `1-home`-Verzeichnis. Um eine neue Wikiseite hinzuzufügen, erstelle eine neue Datei im Wikiverzeichnis. Ganz oben auf einer Seite kannst du `Title` und andere [Seiteneinstellungen](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md#einstellungen-seite) festlegen. Mit `Tag` kann man ähnliche Seiten gruppieren. 
@@ -131,10 +135,6 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 `content/shared/page-new-wiki.md` = Inhaltsdatei für neue Wikiseite  
 `system/layouts/wiki.html` = Layoutdatei für individuelle Wikiseite  
 `system/layouts/wiki-start.html` = Layoutdatei für die Wikistartseite  
-
-## Installation
-
-[Erweiterung herunterladen](https://github.com/annaesvensson/yellow-wiki/archive/main.zip) und die ZIP-Datei in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 
 ## Entwickler
 
