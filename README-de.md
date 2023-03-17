@@ -12,7 +12,11 @@ Wiki für deine Webseite.
 
 ## Wie man ein Wiki benutzt
 
-Das Wiki ist auf deiner Webseite vorhanden als `http://website/wiki/`. Um das Wiki auf der Startseite anzuzeigen, gehe in dein `content`-Verzeichnis und lösche das `1-home`-Verzeichnis. Um eine neue Wikiseite hinzuzufügen, erstelle eine neue Datei im Wikiverzeichnis. Ganz oben auf einer Seite kannst du `Title` und andere [Seiteneinstellungen](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md#einstellungen-seite) festlegen. Mit `Tag` kann man ähnliche Seiten gruppieren. 
+Das Wiki ist auf deiner Webseite vorhanden als `http://website/wiki/`. Um eine neue Wikiseite hinzuzufügen, erstelle eine neue Datei im Wikiverzeichnis. Ganz oben auf einer Seite kannst du `Title` und andere [Seiteneinstellungen](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md#einstellungen-seite) festlegen. Mit `Tag` kann man ähnliche Seiten gruppieren. 
+
+## Wie man ein Wiki bearbeitet
+
+Falls du Wikiseiten im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/wiki/`. Falls du Wikiseiten auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/2-wiki`-Verzeichnis an. Hier sind ein paar Tipps. Präfixe und Suffixe werden aus der Adresse entfernt, damit es besser aussieht. Die Datei `content/2-wiki/wiki-example.md` ist vorhanden als `http://website/wiki/wiki-example`.
 
 ## Wie man Wikiinformationen anzeigt
 
@@ -110,7 +114,17 @@ Links zum Wiki anzeigen:
     [Siehe Seiten über Kaffee](/wiki/tag:kaffee/)
     [Siehe Seiten mit Beispielen](/wiki/tag:beispiel/)
 
-Wikistartseite in den Einstellungen festlegen, URL mit Unterverzeichnis zur Kategorisierung:
+Wikiadresse in den Einstellungen festlegen, URL wird automatisch erkannt:
+
+    WikiStartLocation: auto
+    WikiNewLocation: @title
+
+Wikiadresse in den Einstellungen festlegen, URL mit Unterverzeichnis für Autor:
+
+    WikiStartLocation: /wiki/
+    WikiNewLocation: /wiki/@author/@title
+
+Wikiadresse in den Einstellungen festlegen, URL mit Unterverzeichnis zur Kategorisierung:
 
     WikiStartLocation: /wiki/
     WikiNewLocation: /wiki/@tag/@title

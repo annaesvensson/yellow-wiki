@@ -12,7 +12,11 @@ Wiki for your website.
 
 ## How to use a wiki
 
-The wiki is available on your website as `http://website/wiki/`. To show the wiki on the home page, go to your `content` folder and delete the `1-home` folder. To create a new wiki page, add a new file to the wiki folder. Set `Title` and other [page settings](https://github.com/annaesvensson/yellow-core#settings-page) at the top of a page. Use `Tag` to group similar pages together.
+The wiki is available on your website as `http://website/wiki/`. To create a new wiki page, add a new file to the wiki folder. Set `Title` and other [page settings](https://github.com/annaesvensson/yellow-core#settings-page) at the top of a page. Use `Tag` to group similar pages together.
+
+## How to edit a wiki
+
+If you want to edit wiki pages in a [web browser](https://github.com/annaesvensson/yellow-edit), you can do this on your website at `http://website/edit/wiki/`. If you want to edit wiki pages on your [computer](https://github.com/annaesvensson/yellow-core), have a look inside your `content/2-wiki` folder. Here are some tips. Prefix and suffix are removed from the location, so that it looks better. The file `content/2-wiki/wiki-example.md` is available on your website as `http://website/wiki/wiki-example`.
 
 ## How to show wiki information
 
@@ -110,7 +114,17 @@ Showing links to wiki:
     [See pages about coffee](/wiki/tag:coffee/)
     [See pages with examples](/wiki/tag:example/)
 
-Configuring wiki start page in the settings, URL with subfolder for categorisation:
+Configuring wiki address in the settings, URL is automatically detected:
+
+    WikiStartLocation: auto
+    WikiNewLocation: @title
+
+Configuring wiki address in the settings, URL with subfolder for author:
+
+    WikiStartLocation: /wiki/
+    WikiNewLocation: /wiki/@author/@title
+
+Configuring wiki address in the settings, URL with subfolder for categorisation:
 
     WikiStartLocation: /wiki/
     WikiNewLocation: /wiki/@tag/@title

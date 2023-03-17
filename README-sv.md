@@ -12,7 +12,11 @@ Wiki för din webbplats.
 
 ## Hur man använder en wiki
 
-Wikin finns på din webbplats som `http://website/wiki/`. För att visa wikin på startsidan, gå till din `content` mapp och ta bort `1-home` mappen. För att skapa en ny wikisida, lägg till en ny fil i wiki-mappen. Ställ in `Title` och andra [sidinställningar](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md#inställningar-page) högst upp på en sida. Använd `Tag` för att gruppera liknande sidor.
+Wikin finns på din webbplats som `http://website/wiki/`. För att skapa en ny wikisida, lägg till en ny fil i wiki-mappen. Ställ in `Title` och andra [sidinställningar](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md#inställningar-page) högst upp på en sida. Använd `Tag` för att gruppera liknande sidor.
+
+## Hur man redigerar en wiki
+
+Om du vill redigera wikisidor i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/wiki/`. Om du vill redigera wikisidor på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/2-wiki` mappen. Här är några tips. Prefix och suffix tas bort från adressen, så att det ser bättre ut. Filen `content/2-wiki/wiki-example.md` är tillgänglig på din webbplats som `http://website/wiki/wiki-example`.
 
 ## Hur man visar wikiinformation
 
@@ -110,7 +114,17 @@ Visa länkar till wikin:
     [Se sidor om kaffe](/wiki/tag:kaffe/)
     [Se sidor med exempel](/wiki/tag:exempel/)
 
-Konfigurera wikistartsida i inställningar, URL med undermapp för kategorisering: 
+Konfigurera wikiadress i inställningar, URL identifieras automatiskt:
+
+    WikiStartLocation: auto
+    WikiNewLocation: @title
+
+Konfigurera wikiadress i inställningar, URL med undermapp för författare:
+
+    WikiStartLocation: /wiki/
+    WikiNewLocation: /wiki/@author/@title
+
+Konfigurera wikiadress i inställningar, URL med undermapp för kategorisering:
 
     WikiStartLocation: /wiki/
     WikiNewLocation: /wiki/@tag/@title
