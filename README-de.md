@@ -16,7 +16,7 @@ Das Wiki ist auf deiner Webseite vorhanden als `http://website/wiki/`. Um eine n
 
 ## Wie man ein Wiki bearbeitet
 
-Falls du Wikiseiten im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/wiki/`. Falls du Wikiseiten auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/2-wiki`-Verzeichnis an. Hier sind ein paar Tipps. Präfixe und Suffixe werden aus der Adresse entfernt, damit es besser aussieht. Das Verzeichnis `content/2-wiki` ist vorhanden als `http://website/wiki/. Die Datei `content/2-wiki/wiki-example.md` ist vorhanden als `http://website/wiki/wiki-example`.
+Falls du Wikiseiten im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/wiki/`. Falls du Wikiseiten auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/2-wiki`-Verzeichnis an. Hier sind ein paar Tipps. Präfixe und Suffixe werden aus der Adresse entfernt, damit es besser aussieht. Das Verzeichnis `content/2-wiki` ist vorhanden als `http://website/wiki/`. Die Datei `content/2-wiki/wiki-example.md` ist vorhanden als `http://website/wiki/wiki-example`.
 
 ## Wie man Wikiinformationen anzeigt
 
@@ -26,9 +26,9 @@ Du kannst Abkürzungen verwenden, um Informationen über das Wiki anzuzeigen:
 `[wikitags]` für eine Liste der Tags  
 `[wikipages]` für eine Liste von Seiten, alphabetische Reihenfolge  
 
-Die folgenden Argumente sind verfügbar, alle bis auf das erste Argument sind optional:
+Die folgenden Argumente sind verfügbar:
 
-`StartLocation` = Ort der Wikistartseite  
+`StartLocation` = Ort der Wikistartseite, `auto` für automatische Erkennung  
 `EntriesMax` = Anzahl der Einträge pro Abkürzung, 0 für unbegrenzt  
 `FilterTag` = Seiten mit bestimmten Tag anzeigen, nur bei `[wikipages]`  
 

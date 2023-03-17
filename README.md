@@ -26,9 +26,9 @@ You can use shortcuts to show information about the wiki:
 `[wikitags]` for a list of tags  
 `[wikipages]` for a list of pages, alphabetic order  
 
-The following arguments are available, all but the first argument are optional:
+The following arguments are available:
 
-`StartLocation` = location of wiki start page  
+`StartLocation` = location of wiki start page, `auto` for automatic detection  
 `EntriesMax` = number of entries to show per shortcut, 0 for unlimited  
 `FilterTag` = show pages with a specific tag, `[wikipages]` only  
 

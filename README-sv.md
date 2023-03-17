@@ -26,9 +26,9 @@ Du kan använda förkortningar för att visa information om wikin:
 `[wikitags]` för en lista med taggar  
 `[wikipages]` för en lista med sidor, alfabetisk ordning  
 
-Följande argument är tillgängliga, alla utom det första argumentet är valfria:
+Följande argument är tillgängliga:
 
-`StartLocation` = plats för wikistartsida  
+`StartLocation` = plats för wikistartsida, `auto` för automatisk detektering  
 `EntriesMax` = antal inlägg att visa per förkortning, 0 för obegränsad  
 `FilterTag` = visa sidor med en specifik tagg, endast `[wikipages]`  
 
