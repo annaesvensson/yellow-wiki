@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Wiki 0.8.23
+# Wiki 0.8.24
 
 Wiki für deine Webseite.
 
@@ -16,7 +16,7 @@ Das Wiki ist auf deiner Webseite vorhanden als `http://website/wiki/`. Um eine n
 
 ## Wie man ein Wiki bearbeitet
 
-Falls du Wikiseiten im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/wiki/`. Falls du Wikiseiten auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/2-wiki`-Verzeichnis an. Hier sind ein paar Tipps. Präfixe und Suffixe werden aus der Adresse entfernt, damit es besser aussieht. Die Datei `content/2-wiki/wiki-example.md` ist vorhanden als `http://website/wiki/wiki-example`.
+Falls du Wikiseiten im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/wiki/`. Falls du Wikiseiten auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/2-wiki`-Verzeichnis an. Hier sind ein paar Tipps. Präfixe und Suffixe werden aus der Adresse entfernt, damit es besser aussieht. Das Verzeichnis `content/2-wiki` ist vorhanden als `http://website/wiki/. Die Datei `content/2-wiki/wiki-example.md` ist vorhanden als `http://website/wiki/wiki-example`.
 
 ## Wie man Wikiinformationen anzeigt
 
@@ -24,15 +24,13 @@ Du kannst Abkürzungen verwenden, um Informationen über das Wiki anzuzeigen:
 
 `[wikiauthors]` für eine Liste der Autoren  
 `[wikitags]` für eine Liste der Tags  
-`[wikirelated]` für eine Liste von Seiten, ähnlich zur aktuellen Seite    
 `[wikipages]` für eine Liste von Seiten, alphabetische Reihenfolge  
-`[wikichanges]` für eine Liste von Seiten, zuletzt veränderte Reihenfolge  
 
 Die folgenden Argumente sind verfügbar, alle bis auf das erste Argument sind optional:
 
 `StartLocation` = Ort der Wikistartseite  
 `EntriesMax` = Anzahl der Einträge pro Abkürzung, 0 für unbegrenzt  
-`FilterTag` = Seiten mit bestimmten Tag anzeigen, nur bei `[wikipages]` oder `[wikichanges]`  
+`FilterTag` = Seiten mit bestimmten Tag anzeigen, nur bei `[wikipages]`  
 
 ## Beispiele
 
@@ -76,35 +74,23 @@ Inhaltsdatei mit Wikiinformationen:
     ---
     ## Seiten
 
-    [wikipages /wiki/ 0]
+    [wikipages]
 
     ## Tags
 
-    [wikitags /wiki/ 0]
+    [wikitags]
 
-Liste mit Seiten anzeigen, alphabetische Reihenfolge:
+Liste mit Seiten anzeigen, unterschiedliche Anzahl Einträge:
 
     [wikipages /wiki/ 0]
     [wikipages /wiki/ 3]
     [wikipages /wiki/ 10]
 
-Liste mit Seiten anzeigen, alphabetische Reihenfolge mit einem bestimmten Tag:
+Liste mit Seiten anzeigen, mit einem bestimmten Tag:
 
     [wikipages /wiki/ 0 Kaffee]
     [wikipages /wiki/ 0 Milch]
     [wikipages /wiki/ 0 Beispiel]
-
-Liste mit Seiten anzeigen, zuletzt veränderte Reihenfolge:
-
-    [wikichanges /wiki/ 0]
-    [wikichanges /wiki/ 3]
-    [wikichanges /wiki/ 10]
-
-Liste mit Seiten anzeigen, zuletzt veränderte Reihenfolge mit einem bestimmten Tag:
-
-    [wikichanges /wiki/ 0 Kaffee]
-    [wikichanges /wiki/ 0 Milch]
-    [wikichanges /wiki/ 0 Beispiel]
 
 Links zum Wiki anzeigen:
 

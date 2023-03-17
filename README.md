@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Wiki 0.8.23
+# Wiki 0.8.24
 
 Wiki for your website.
 
@@ -16,7 +16,7 @@ The wiki is available on your website as `http://website/wiki/`. To create a new
 
 ## How to edit a wiki
 
-If you want to edit wiki pages in a [web browser](https://github.com/annaesvensson/yellow-edit), you can do this on your website at `http://website/edit/wiki/`. If you want to edit wiki pages on your [computer](https://github.com/annaesvensson/yellow-core), have a look inside your `content/2-wiki` folder. Here are some tips. Prefix and suffix are removed from the location, so that it looks better. The file `content/2-wiki/wiki-example.md` is available on your website as `http://website/wiki/wiki-example`.
+If you want to edit wiki pages in a [web browser](https://github.com/annaesvensson/yellow-edit), you can do this on your website at `http://website/edit/wiki/`. If you want to edit wiki pages on your [computer](https://github.com/annaesvensson/yellow-core), have a look inside your `content/2-wiki` folder. Here are some tips. Prefix and suffix are removed from the location, so that it looks better. The folder `content/2-wiki` is available on your website as `http://website/wiki/`. The file `content/2-wiki/wiki-example.md` is available on your website as `http://website/wiki/wiki-example`.
 
 ## How to show wiki information
 
@@ -24,15 +24,13 @@ You can use shortcuts to show information about the wiki:
 
 `[wikiauthors]` for a list of authors  
 `[wikitags]` for a list of tags  
-`[wikirelated]` for a list of pages, related to the current page    
 `[wikipages]` for a list of pages, alphabetic order  
-`[wikichanges]` for a list of pages, modified order  
 
 The following arguments are available, all but the first argument are optional:
 
 `StartLocation` = location of wiki start page  
 `EntriesMax` = number of entries to show per shortcut, 0 for unlimited  
-`FilterTag` = show pages with a specific tag, `[wikipages]` or `[wikichanges]` only  
+`FilterTag` = show pages with a specific tag, `[wikipages]` only  
 
 ## Examples
 
@@ -76,35 +74,23 @@ Content file with wiki information:
     ---
     ## Pages
 
-    [wikipages /wiki/ 0]
+    [wikipages]
 
     ## Tags
 
-    [wikitags /wiki/ 0]
+    [wikitags]
 
-Showing list of pages, alphabetic order:
+Showing list of pages, different number of entries:
 
     [wikipages /wiki/ 0]
     [wikipages /wiki/ 3]
     [wikipages /wiki/ 10]
 
-Showing list of pages, alphabetic order with a specific tag:
+Showing list of pages, with a specific tag:
 
     [wikipages /wiki/ 0 coffee]
     [wikipages /wiki/ 0 milk]
     [wikipages /wiki/ 0 example]
-
-Showing list of pages, modified order:
-
-    [wikichanges /wiki/ 0]
-    [wikichanges /wiki/ 3]
-    [wikichanges /wiki/ 10]
-
-Showing list of pages, modified order with a specific tag:
-
-    [wikichanges /wiki/ 0 coffee]
-    [wikichanges /wiki/ 0 milk]
-    [wikichanges /wiki/ 0 example]
 
 Showing links to wiki:
 

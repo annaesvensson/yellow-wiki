@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Wiki 0.8.23
+# Wiki 0.8.24
 
 Wiki för din webbplats.
 
@@ -16,7 +16,7 @@ Wikin finns på din webbplats som `http://website/wiki/`. För att skapa en ny w
 
 ## Hur man redigerar en wiki
 
-Om du vill redigera wikisidor i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/wiki/`. Om du vill redigera wikisidor på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/2-wiki` mappen. Här är några tips. Prefix och suffix tas bort från adressen, så att det ser bättre ut. Filen `content/2-wiki/wiki-example.md` är tillgänglig på din webbplats som `http://website/wiki/wiki-example`.
+Om du vill redigera wikisidor i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/wiki/`. Om du vill redigera wikisidor på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/2-wiki` mappen. Här är några tips. Prefix och suffix tas bort från adressen, så att det ser bättre ut. Mappen `content/2-wiki` är tillgänglig på din webbplats som `http://website/wiki/`. Filen `content/2-wiki/wiki-example.md` är tillgänglig på din webbplats som `http://website/wiki/wiki-example`.
 
 ## Hur man visar wikiinformation
 
@@ -24,15 +24,13 @@ Du kan använda förkortningar för att visa information om wikin:
 
 `[wikiauthors]` för en lista över författare  
 `[wikitags]` för en lista med taggar  
-`[wikirelated]` för en lista med sidor, som är relaterade till den aktuella sidan  
 `[wikipages]` för en lista med sidor, alfabetisk ordning  
-`[wikichanges]` för en lista över sidor, senast ändrad ordning  
 
 Följande argument är tillgängliga, alla utom det första argumentet är valfria:
 
 `StartLocation` = plats för wikistartsida  
 `EntriesMax` = antal inlägg att visa per förkortning, 0 för obegränsad  
-`FilterTag` = visa sidor med en specifik tagg, endast `[wikipages]` eller `[wikichanges]`  
+`FilterTag` = visa sidor med en specifik tagg, endast `[wikipages]`  
 
 ## Exempel
 
@@ -76,35 +74,23 @@ Innehållsfil med wikiinformation:
     ---
     ## Sidor
 
-    [wikipages /wiki/ 0]
+    [wikipages]
 
     ## Taggar
 
-    [wikitags /wiki/ 0]
+    [wikitags]
 
-Visa lista med sidor, alfabetisk ordning:
+Visa lista med sidor, olika antal inlägg:
 
     [wikipages /wiki/ 0]
     [wikipages /wiki/ 3]
     [wikipages /wiki/ 10]
 
-Visa lista med sidor, alfabetisk ordning med en specifik tagg:
+Visa lista med sidor, med en specifik tagg:
 
     [wikipages /wiki/ 0 kaffe]
     [wikipages /wiki/ 0 mjölk]
     [wikipages /wiki/ 0 exempel]
-
-Visa lista med sidor, senast ändrad ordning:
-
-    [wikichanges /wiki/ 0]
-    [wikichanges /wiki/ 3]
-    [wikichanges /wiki/ 10]
-
-Visa lista med sidor, senast ändrad ordning med en specifik tagg:
-
-    [wikichanges /wiki/ 0 kaffe]
-    [wikichanges /wiki/ 0 mjölk]
-    [wikichanges /wiki/ 0 exempel]
 
 Visa länkar till wikin:
 
