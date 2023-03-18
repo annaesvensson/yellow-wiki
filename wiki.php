@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.24";
+    const VERSION = "0.8.25";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -10,7 +10,7 @@ class YellowWiki {
         $this->yellow = $yellow;
         $this->yellow->system->setDefault("wikiStartLocation", "auto");
         $this->yellow->system->setDefault("wikiNewLocation", "@title");
-        $this->yellow->system->setDefault("wikiEntriesMax", "5");
+        $this->yellow->system->setDefault("wikiShortcutEntries", "5");
         $this->yellow->system->setDefault("wikiPaginationLimit", "30");
     }
 
@@ -39,17 +39,17 @@ class YellowWiki {
     // Return wikiauthors shortcut
     public function getShorcutWikiauthors($page, $name, $text) {
         $output = null;
-        list($startLocation, $entriesMax) = $this->yellow->toolbox->getTextArguments($text);
+        list($startLocation, $shortcutEntries) = $this->yellow->toolbox->getTextArguments($text);
         if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($shortcutEntries)) $shortcutEntries = $this->yellow->system->get("wikiShortcutEntries");
         $wikiStart = $this->getWikiStart($page, $startLocation);
         if (!is_null($wikiStart)) {
             $pages = $this->getWikiPages($wikiStart);
             $page->setLastModified($pages->getModified());
             $authors = $this->getMeta($pages, "author");
-            if ($entriesMax!=0 && count($authors)>$entriesMax) {
+            if ($shortcutEntries!=0 && count($authors)>$shortcutEntries) {
                 uasort($authors, "strnatcasecmp");
-                $authors = array_slice($authors, -$entriesMax, $entriesMax, true);
+                $authors = array_slice($authors, -$shortcutEntries, $shortcutEntries, true);
             }
             uksort($authors, "strnatcasecmp");
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
@@ -69,17 +69,17 @@ class YellowWiki {
     // Return wikitags shortcut
     public function getShorcutWikitags($page, $name, $text) {
         $output = null;
-        list($startLocation, $entriesMax) = $this->yellow->toolbox->getTextArguments($text);
+        list($startLocation, $shortcutEntries) = $this->yellow->toolbox->getTextArguments($text);
         if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($shortcutEntries)) $shortcutEntries = $this->yellow->system->get("wikiShortcutEntries");
         $wikiStart = $this->getWikiStart($page, $startLocation);
         if (!is_null($wikiStart)) {
             $pages = $this->getWikiPages($wikiStart);
             $page->setLastModified($pages->getModified());
             $tags = $this->getMeta($pages, "tag");
-            if ($entriesMax!=0 && count($tags)>$entriesMax) {
+            if ($shortcutEntries!=0 && count($tags)>$shortcutEntries) {
                 uasort($tags, "strnatcasecmp");
-                $tags = array_slice($tags, -$entriesMax, $entriesMax, true);
+                $tags = array_slice($tags, -$shortcutEntries, $shortcutEntries, true);
             }
             uksort($tags, "strnatcasecmp");
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
@@ -99,16 +99,16 @@ class YellowWiki {
     // Return wikipages shortcut
     public function getShorcutWikipages($page, $name, $text) {
         $output = null;
-        list($startLocation, $entriesMax, $filterTag) = $this->yellow->toolbox->getTextArguments($text);
+        list($startLocation, $shortcutEntries, $filterTag) = $this->yellow->toolbox->getTextArguments($text);
         if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
-        if (is_string_empty($entriesMax)) $entriesMax = $this->yellow->system->get("wikiEntriesMax");
+        if (is_string_empty($shortcutEntries)) $shortcutEntries = $this->yellow->system->get("wikiShortcutEntries");
         $wikiStart = $this->getWikiStart($page, $startLocation);
         if (!is_null($wikiStart)) {
             $pages = $this->getWikiPages($wikiStart, false);
             $page->setLastModified($pages->getModified());
             if (!is_string_empty($filterTag)) $pages->filter("tag", $filterTag);
             $pages->sort("title");
-            if ($entriesMax!=0) $pages->limit($entriesMax);
+            if ($shortcutEntries!=0) $pages->limit($shortcutEntries);
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
             foreach ($pages as $pageWiki) {

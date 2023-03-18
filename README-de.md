@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Wiki 0.8.24
+# Wiki 0.8.25
 
 Wiki für deine Webseite.
 
@@ -29,7 +29,7 @@ Du kannst Abkürzungen verwenden, um Informationen über das Wiki anzuzeigen:
 Die folgenden Argumente sind verfügbar:
 
 `StartLocation` = Ort der Wikistartseite, `auto` für automatische Erkennung  
-`EntriesMax` = Anzahl der Einträge pro Abkürzung, 0 für unbegrenzt  
+`ShortcutEntries` = Anzahl der Einträge pro Abkürzung, 0 für unbegrenzt  
 `FilterTag` = Seiten mit bestimmten Tag anzeigen, nur bei `[wikipages]`  
 
 ## Beispiele
@@ -121,7 +121,7 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 
 `WikiStartLocation` = Ort der Wikistartseite, `auto` für automatische Erkennung  
 `WikiNewLocation` = Ort für neue Wikiseiten, [unterstützte Platzhalter](#einstellungen-placeholders)  
-`WikiEntriesMax` = Anzahl der Einträge pro Abkürzung, 0 für unbegrenzt  
+`WikiShortcutEntries` = Anzahl der Einträge pro Abkürzung, 0 für unbegrenzt  
 `WikiPaginationLimit` = Anzahl der Einträge pro Seite, 0 für unbegrenzt  
 
 <a id="einstellungen-placeholders"></a>Die folgenden Platzhalter für neue Wikiseiten werden unterstützt:
