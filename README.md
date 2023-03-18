@@ -16,7 +16,7 @@ The wiki is available on your website as `http://website/wiki/`. To create a new
 
 ## How to edit a wiki
 
-If you want to edit wiki pages in a [web browser](https://github.com/annaesvensson/yellow-edit), you can do this on your website at `http://website/edit/wiki/`. If you want to edit wiki pages on your [computer](https://github.com/annaesvensson/yellow-core), have a look inside your `content/2-wiki` folder. Here are some tips. Prefix and suffix are removed from the location, so that it looks better. The folder `content/2-wiki` is available on your website as `http://website/wiki/`. The file `content/2-wiki/wiki-example.md` is available on your website as `http://website/wiki/wiki-example`.
+If you want to edit wiki pages in a [web browser](https://github.com/annaesvensson/yellow-edit), you can do this on your website at `http://website/edit/wiki/`. If you want to edit wiki pages on your [computer](https://github.com/annaesvensson/yellow-core), have a look inside your `content/2-wiki` folder. Here are some tips. Prefix and suffix are removed from the address, so that it looks better. The folder `content/2-wiki` is available on your website as `http://website/wiki/`. The file `content/2-wiki/wiki-example.md` is available on your website as `http://website/wiki/wiki-example`.
 
 ## How to show wiki information
 
