@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.25";
+    const VERSION = "0.8.26";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -104,7 +104,7 @@ class YellowWiki {
         if (is_string_empty($shortcutEntries)) $shortcutEntries = $this->yellow->system->get("wikiShortcutEntries");
         $wikiStart = $this->getWikiStart($page, $startLocation);
         if (!is_null($wikiStart)) {
-            $pages = $this->getWikiPages($wikiStart, false);
+            $pages = $this->getWikiPages($wikiStart, false)->remove($page);
             $page->setLastModified($pages->getModified());
             if (!is_string_empty($filterTag)) $pages->filter("tag", $filterTag);
             $pages->sort("title");
@@ -194,17 +194,14 @@ class YellowWiki {
     }
     
     // Return wiki pages for page
-    public function getWikiPages($page, $includeWikiStart = true) {
+    public function getWikiPages($page) {
         if ($this->yellow->system->get("wikiStartLocation")=="auto") {
             $pages = $page->getChildren();
         } else {
             $pages = $this->yellow->content->index();
         }
         $pages->filter("layout", "wiki");
-        if ($includeWikiStart) {
-            $wikiStart = $this->yellow->content->find($page->location);
-            $pages->append($wikiStart);
-        }
+        $pages->append($this->yellow->content->find($page->location));
         return $pages;
     }
     
