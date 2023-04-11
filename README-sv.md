@@ -37,11 +37,11 @@ Följande argument är tillgängliga:
 Innehållsfil för wikin:
 
     ---
-    Title: Wikisida
+    Title: Wiki exempelsida
     Layout: wiki
     Tag: Exempel
     ---
-    Detta är ett exempel på en wikisida.
+    Detta är en exempelsida.
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 

@@ -37,11 +37,11 @@ The following arguments are available:
 Content file for wiki:
 
     ---
-    Title: Wiki page
+    Title: Wiki example page
     Layout: wiki
     Tag: Example
     ---
-    This is an example wiki page.
+    This is an example page.
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 

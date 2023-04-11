@@ -37,11 +37,11 @@ Die folgenden Argumente sind verfügbar:
 Inhaltsdatei fürs Wiki:
 
     ---
-    Title: Wikiseite
+    Title: Wiki-Beispielseite
     Layout: wiki
     Tag: Beispiel
     ---
-    Das ist eine Beispielseite fürs Wiki.
+    Das ist eine Beispielseite.
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
     labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 

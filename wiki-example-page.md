@@ -1,5 +1,5 @@
 ---
-Title: Wiki example
+Title: Wiki example page
 Layout: wiki
 Tag: Example
 ---
