@@ -16,7 +16,7 @@ Wikin finns på din webbplats som `http://website/wiki/`. För att skapa en ny w
 
 ## Hur man redigerar en wiki
 
-Om du vill redigera wikisidor i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/wiki/`. Om du vill redigera wikisidor på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/2-wiki` mappen. Här är några tips. Prefix och suffix tas bort från adressen, så att det ser bättre ut. Mappen `content/2-wiki` är tillgänglig på din webbplats som `http://website/wiki/`. Filen `content/2-wiki/wiki-example.md` är tillgänglig på din webbplats som `http://website/wiki/wiki-example`.
+Om du vill redigera wikisidor i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/wiki/`. Om du vill redigera wikisidor på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/2-wiki` mappen. Här är några tips.  Högst upp på en sida kan du ändra `Title` och andra [sidinställningar](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md#inställningar-page). Nedan kan du ändra text och bilder. [Läs mer om textformatering](https://datenstrom.se/sv/yellow/help/how-to-change-the-content).
 
 ## Hur man visar wikiinformation
 

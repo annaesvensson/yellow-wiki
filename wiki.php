@@ -10,7 +10,7 @@ class YellowWiki {
         $this->yellow = $yellow;
         $this->yellow->system->setDefault("wikiStartLocation", "auto");
         $this->yellow->system->setDefault("wikiNewLocation", "@title");
-        $this->yellow->system->setDefault("wikiShortcutEntries", "5");
+        $this->yellow->system->setDefault("wikiShortcutEntries", "0");
         $this->yellow->system->setDefault("wikiPaginationLimit", "30");
     }
 
