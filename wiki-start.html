@@ -2,9 +2,10 @@
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->page->getPages("wiki")->paginate($this->yellow->system->get("wikiPaginationLimit")) ?>
 <ul>
 <?php $section = $sectionNew = "" ?>
-<?php foreach ($this->yellow->page->getPages("wiki")->paginate($this->yellow->system->get("wikiPaginationLimit")) as $page): ?>
+<?php foreach ($pages as $page): ?>
 <?php if ($this->yellow->page->get("wikiChronologicalOrder")): ?>
 <?php $sectionNew = htmlspecialchars($page->getDate("modified")) ?>
 <?php else: ?>
@@ -14,7 +15,7 @@
 <li><a href="<?php echo $page->getLocation(true) ?>"><?php echo $page->getHtml("title") ?></a></li>
 <?php endforeach ?>
 </ul>
-<?php $this->yellow->layout("pagination", $this->yellow->page->getPages("wiki")) ?>
+<?php $this->yellow->layout("pagination", $pages) ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
