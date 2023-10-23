@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.27";
+    const VERSION = "0.8.28";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -46,17 +46,14 @@ class YellowWiki {
         if (!is_null($wikiStart)) {
             $pages = $this->getWikiPages($wikiStart);
             $page->setLastModified($pages->getModified());
-            $authors = $this->getMeta($pages, "author");
-            if ($shortcutEntries!=0 && count($authors)>$shortcutEntries) {
-                uasort($authors, "strnatcasecmp");
-                $authors = array_slice($authors, -$shortcutEntries, $shortcutEntries, true);
-            }
+            $authors = $pages->group("author", false, "count");
+            if ($shortcutEntries!=0) $authors = array_slice($authors, 0, $shortcutEntries, true);
             uksort($authors, "strnatcasecmp");
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
-            foreach ($authors as $key=>$value) {
-                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$key")."\">";
-                $output .= htmlspecialchars($key)."</a></li>\n";
+            foreach ($authors as $author=>$collection) {
+                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$author")."\">";
+                $output .= htmlspecialchars($author)."</a></li>\n";
             }
             $output .= "</ul>\n";
             $output .= "</div>\n";
@@ -76,17 +73,14 @@ class YellowWiki {
         if (!is_null($wikiStart)) {
             $pages = $this->getWikiPages($wikiStart);
             $page->setLastModified($pages->getModified());
-            $tags = $this->getMeta($pages, "tag");
-            if ($shortcutEntries!=0 && count($tags)>$shortcutEntries) {
-                uasort($tags, "strnatcasecmp");
-                $tags = array_slice($tags, -$shortcutEntries, $shortcutEntries, true);
-            }
+            $tags = $pages->group("tag", false, "count");
+            if ($shortcutEntries!=0) $tags = array_slice($tags, 0, $shortcutEntries, true);
             uksort($tags, "strnatcasecmp");
             $output = "<div class=\"".htmlspecialchars($name)."\">\n";
             $output .= "<ul>\n";
-            foreach ($tags as $key=>$value) {
-                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->lookup->normaliseArguments("tag:$key")."\">";
-                $output .= htmlspecialchars($key)."</a></li>\n";
+            foreach ($tags as $tag=>$collection) {
+                $output .= "<li><a href=\"".$wikiStart->getLocation(true).$this->yellow->lookup->normaliseArguments("tag:$tag")."\">";
+                $output .= htmlspecialchars($tag)."</a></li>\n";
             }
             $output .= "</ul>\n";
             $output .= "</div>\n";
@@ -214,19 +208,5 @@ class YellowWiki {
             }
         }
         return trim($class);
-    }
-    
-    // Return meta data from page collection
-    public function getMeta($pages, $key) {
-        $data = array();
-        foreach ($pages as $page) {
-            if ($page->isExisting($key)) {
-                foreach (preg_split("/\s*,\s*/", $page->get($key)) as $entry) {
-                    if (!isset($data[$entry])) $data[$entry] = 0;
-                    ++$data[$entry];
-                }
-            }
-        }
-        return $this->yellow->lookup->normaliseArray($data);
     }
 }
