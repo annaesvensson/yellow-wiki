@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.26";
+    const VERSION = "0.8.27";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -146,7 +146,7 @@ class YellowWiki {
             }
             if ($page->isRequest("modified")) {
                 $pages->filter("modified", $page->getRequest("modified"), false);
-                array_push($pagesFilter, $this->yellow->language->normaliseDate($pages->getFilter()));
+                array_push($pagesFilter, $this->yellow->lookup->normaliseDate($pages->getFilter()));
             }
             $pages->sort($chronologicalOrder ? "modified" : "title", !$chronologicalOrder);
             if (!is_array_empty($pagesFilter)) {
