@@ -3,18 +3,14 @@
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <?php $pages = $this->yellow->page->getPages("wiki")->paginate($this->yellow->system->get("wikiPaginationLimit")) ?>
+<?php foreach ($this->yellow->page->get("wikiChronologicalOrder") ? $pages->group("modified", false, "Y-m-d") : $pages->group("title", true, "initial") as $group=>$collection): ?>
+<h2><?php echo htmlspecialchars($this->yellow->page->get("wikiChronologicalOrder") ? $this->yellow->language->getDateStandard($group) : $group) ?></h2>
 <ul>
-<?php $section = $sectionNew = "" ?>
-<?php foreach ($pages as $page): ?>
-<?php if ($this->yellow->page->get("wikiChronologicalOrder")): ?>
-<?php $sectionNew = htmlspecialchars($page->getDate("modified")) ?>
-<?php else: ?>
-<?php $sectionNew = htmlspecialchars(strtoupperu(substru($page->get("title"), 0, 1))) ?>
-<?php endif ?>
-<?php if ($section!=$sectionNew) { $section = $sectionNew; echo "</ul><h2>$section</h2><ul>\n"; } ?>
+<?php foreach ($collection as $page): ?>
 <li><a href="<?php echo $page->getLocation(true) ?>"><?php echo $page->getHtml("title") ?></a></li>
 <?php endforeach ?>
 </ul>
+<?php endforeach ?>
 <?php $this->yellow->layout("pagination", $pages) ?>
 </div>
 </div>
