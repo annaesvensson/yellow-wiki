@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.29";
+    const VERSION = "0.8.30";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -28,16 +28,16 @@ class YellowWiki {
         $output = null;
         if (substru($name, 0, 4)=="wiki" && ($type=="block" || $type=="inline")) {
             switch($name) {
-                case "wikiauthors": $output = $this->getShorcutWikiauthors($page, $name, $text); break;
-                case "wikitags":    $output = $this->getShorcutWikitags($page, $name, $text); break;
-                case "wikipages":   $output = $this->getShorcutWikipages($page, $name, $text); break;
+                case "wikiauthors": $output = $this->getShortcutWikiauthors($page, $name, $text); break;
+                case "wikitags":    $output = $this->getShortcutWikitags($page, $name, $text); break;
+                case "wikipages":   $output = $this->getShortcutWikipages($page, $name, $text); break;
             }
         }
         return $output;
     }
     
     // Return wikiauthors shortcut
-    public function getShorcutWikiauthors($page, $name, $text) {
+    public function getShortcutWikiauthors($page, $name, $text) {
         $output = null;
         list($startLocation, $shortcutEntries) = $this->yellow->toolbox->getTextArguments($text);
         if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
@@ -64,7 +64,7 @@ class YellowWiki {
     }
 
     // Return wikitags shortcut
-    public function getShorcutWikitags($page, $name, $text) {
+    public function getShortcutWikitags($page, $name, $text) {
         $output = null;
         list($startLocation, $shortcutEntries) = $this->yellow->toolbox->getTextArguments($text);
         if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
@@ -91,7 +91,7 @@ class YellowWiki {
     }
     
     // Return wikipages shortcut
-    public function getShorcutWikipages($page, $name, $text) {
+    public function getShortcutWikipages($page, $name, $text) {
         $output = null;
         list($startLocation, $shortcutEntries, $filterTag) = $this->yellow->toolbox->getTextArguments($text);
         if (is_string_empty($startLocation)) $startLocation = $this->yellow->system->get("wikiStartLocation");
