@@ -4,7 +4,7 @@
 
 Wiki för din webbplats.
 
-<p align="center"><img src="wiki-screenshot.png?raw=true" alt="Skärmdump"></p>
+<p align="center"><img src="SCREENSHOT.png?raw=true" alt="Skärmdump"></p>
 
 ## Hur man installerar ett tillägg
 
