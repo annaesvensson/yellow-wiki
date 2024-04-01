@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.8.30";
+    const VERSION = "0.8.31";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -23,8 +23,8 @@ class YellowWiki {
         }
     }
     
-    // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    // Handle page content element
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if (substru($name, 0, 4)=="wiki" && ($type=="block" || $type=="inline")) {
             switch($name) {
