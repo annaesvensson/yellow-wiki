@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.9.2";
+    const VERSION = "0.9.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -22,6 +22,7 @@ class YellowWiki {
                 $page->set("wikiStart", "1");
             }
         }
+        if ($page->get("layout")=="wiki") $page->set("editNewLocation", $this->yellow->system->get("wikiNewLocation"));
     }
     
     // Handle page content element
@@ -164,11 +165,6 @@ class YellowWiki {
             }
             $this->yellow->page->setPage("wikiStart", $wikiStart);
         }
-    }
-    
-    // Handle content file editing
-    public function onEditContentFile($page, $action, $email) {
-        if ($page->get("layout")=="wiki") $page->set("editNewLocation", $this->yellow->system->get("wikiNewLocation"));
     }
     
     // Return wiki start page, null if not found
