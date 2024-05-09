@@ -2,7 +2,7 @@
 // Wiki extension, https://github.com/annaesvensson/yellow-wiki
 
 class YellowWiki {
-    const VERSION = "0.9.3";
+    const VERSION = "0.9.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -201,7 +201,7 @@ class YellowWiki {
         $class = "";
         if ($page->isExisting("tag")) {
             foreach (preg_split("/\s*,\s*/", $page->get("tag")) as $tag) {
-                $class .= " tag-".$this->yellow->lookup->normaliseArguments($tag, false);
+                $class .= " tag-".$this->yellow->lookup->normaliseClass($tag);
             }
         }
         return trim($class);
