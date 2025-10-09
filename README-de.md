@@ -92,13 +92,13 @@ Liste mit Seiten anzeigen, mit einem bestimmten Tag:
     [wikipages /wiki/ 0 Milch]
     [wikipages /wiki/ 0 Beispiel]
 
-Links zum Wiki anzeigen:
+Links zum Wiki erstellen:
 
     [Siehe alle Seiten](/wiki/special:pages/)
     [Siehe letzte Änderungen](/wiki/special:changes/)
     [Siehe Seiten von Datenstrom](/wiki/author:datenstrom/)
     [Siehe Seiten über Kaffee](/wiki/tag:kaffee/)
-    [Siehe Seiten mit Beispielen](/wiki/tag:beispiel/)
+    [Siehe Wiki-Beispielseite](/wiki/wiki-beispielseite)
 
 Wikiadresse in den Einstellungen festlegen, URL wird automatisch erkannt:
 

@@ -92,13 +92,13 @@ Showing list of pages, with a specific tag:
     [wikipages /wiki/ 0 milk]
     [wikipages /wiki/ 0 example]
 
-Showing links to wiki:
+Making links to wiki:
 
     [See all pages](/wiki/special:pages/)
     [See recent changes](/wiki/special:changes/)
     [See pages by Datenstrom](/wiki/author:datenstrom/)
     [See pages about coffee](/wiki/tag:coffee/)
-    [See pages with examples](/wiki/tag:example/)
+    [See wiki example page](/wiki/wiki-example-page)
 
 Configuring wiki address in the settings, URL is automatically detected:
 

@@ -92,13 +92,13 @@ Visa lista med sidor, med en specifik tagg:
     [wikipages /wiki/ 0 mjölk]
     [wikipages /wiki/ 0 exempel]
 
-Visa länkar till wikin:
+Skapa länkar till wikin:
 
     [Se alla sidor](/wiki/special:pages/)
     [Se senaste ändringarna](/wiki/special:changes/)
     [Se sidor av Datenstrom](/wiki/author:datenstrom/)
     [Se sidor om kaffe](/wiki/tag:kaffe/)
-    [Se sidor med exempel](/wiki/tag:exempel/)
+    [Se wiki exempelsida](/wiki/wiki-exempelsida)
 
 Konfigurera wikiadress i inställningar, URL identifieras automatiskt:
 
