@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
-
 # Wiki 0.9.4
 
-Wiki für deine Webseite.
+Wiki für deine Webseite. Entwickelt von Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Bildschirmfoto"></p>
 
@@ -136,6 +134,4 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 `system/layouts/wiki.html` = Layoutdatei für individuelle Wikiseite  
 `system/layouts/wiki-start.html` = Layoutdatei für die Wikistartseite  
 
-## Entwickler
-
-Anna Svensson. [Hilfe finden](https://datenstrom.se/de/yellow/help/).
+Hast du Fragen? [Hilfe finden](https://datenstrom.se/de/yellow/help/).

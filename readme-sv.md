@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
-
 # Wiki 0.9.4
 
-Wiki för din webbplats.
+Wiki för din webbplats. Utvecklad av Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Skärmdump"></p>
 
@@ -136,6 +134,4 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 `system/layouts/wiki.html` = layoutfil för enskild wikisida  
 `system/layouts/wiki-start.html` = layoutfil för wikistartsida  
 
-## Utvecklare
-
-Anna Svensson. [Få hjälp](https://datenstrom.se/sv/yellow/help/).
+Har du några frågor? [Få hjälp](https://datenstrom.se/sv/yellow/help/).
