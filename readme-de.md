@@ -1,4 +1,4 @@
-# Wiki 0.9.4
+# Wiki 0.9.5
 
 Wiki für deine Webseite. Entwickelt von Anna Svensson.
 

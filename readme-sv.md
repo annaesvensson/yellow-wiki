@@ -1,4 +1,4 @@
-# Wiki 0.9.4
+# Wiki 0.9.5
 
 Wiki för din webbplats. Utvecklad av Anna Svensson.
 
